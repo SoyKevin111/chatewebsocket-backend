@@ -10,15 +10,15 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class WsChatController {
 
-   @MessageMapping("chat.sendMessage")
+   @MessageMapping("/chat.sendMessage")
    @SendTo("/topic/public")
    public ChatMessage sendMessage(@Payload ChatMessage msg){
       System.out.println("Message received from : "+msg.getSender()+" : "+msg.getContent());
       return msg;
    }
 
-   @MessageMapping("chat.addUser")
-   @SendTo("/topic/chat")
+   @MessageMapping("/chat.addUser")
+   @SendTo("/topic/public")
    public ChatMessage addUser(@Payload ChatMessage msg, SimpMessageHeaderAccessor headerAccessor){
       //Almacenar nombre de usuario en los atributos de sesión de WS
       headerAccessor.getSessionAttributes().put("username", msg.getSender());

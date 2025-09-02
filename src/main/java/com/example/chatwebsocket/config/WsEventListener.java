@@ -3,6 +3,7 @@ package com.example.chatwebsocket.config;
 import com.example.chatwebsocket.model.ChatMessage;
 import com.example.chatwebsocket.model.ChatMessageType;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.event.EventListener;
 import org.springframework.messaging.simp.SimpMessageSendingOperations;
 import org.springframework.messaging.simp.stomp.StompHeaderAccessor;
 import org.springframework.stereotype.Component;
@@ -18,6 +19,7 @@ public class WsEventListener {
       this.messageSendingOperations = messageSendingOperations;
    }
 
+   @EventListener
    public void handleWsDisconnectListener(SessionDisconnectEvent event){
       StompHeaderAccessor headerAccessor = StompHeaderAccessor.wrap(event.getMessage());
 
