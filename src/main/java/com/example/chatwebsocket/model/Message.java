@@ -7,8 +7,8 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.time.LocalDateTime;
+
 
 
 @Document(collection = "message")
@@ -24,4 +24,5 @@ public class Message {
    private String sender;
    private String content;
    private MessageType type;
+   private LocalDateTime timestamp;
 }

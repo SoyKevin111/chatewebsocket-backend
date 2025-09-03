@@ -25,7 +25,9 @@ public class UserController {
    @PostMapping("/register")
    public ResponseEntity<?> register(@RequestParam String username) {
       Optional<User> user = userService.findByUsername(username);
-      return user.isPresent() ? ResponseEntity.badRequest().body("User already exists") : ResponseEntity.ok("User registered successfully");
+      return user.isPresent()
+         ? ResponseEntity.badRequest().body("User already exists")
+         : ResponseEntity.ok(this.userService.saveUser(new User(username)));
    }
 
 }
