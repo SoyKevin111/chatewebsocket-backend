@@ -20,16 +20,18 @@ public class WsEventListener {
    }
 
    @EventListener
-   public void handleWsDisconnectListener(SessionDisconnectEvent event){
+   public void handleWsDisconnectListener(SessionDisconnectEvent event) {
       StompHeaderAccessor headerAccessor = StompHeaderAccessor.wrap(event.getMessage());
 
       //Recuperar username
       String username = (String) headerAccessor.getSessionAttributes().get("username");
-      if(username != null){
+      if (username != null) {
          //Asignar menesaje de tipo "LEAVE"
          var message = new Message();
          message.setType(MessageType.LEAVE);
          message.setSender(username);
+
+         System.out.println("user left: " + username + " - " + message.getType());
 
          messageSendingOperations.convertAndSend("/topic/public", message);
       }
