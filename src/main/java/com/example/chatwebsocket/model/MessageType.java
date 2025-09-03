@@ -1,6 +1,6 @@
 package com.example.chatwebsocket.model;
 
-public enum ChatMessageType {
+public enum MessageType {
    JOIN,
    LEAVE,
    CHAT

@@ -1,7 +1,7 @@
 package com.example.chatwebsocket.config;
 
-import com.example.chatwebsocket.model.ChatMessage;
-import com.example.chatwebsocket.model.ChatMessageType;
+import com.example.chatwebsocket.model.Message;
+import com.example.chatwebsocket.model.MessageType;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.event.EventListener;
 import org.springframework.messaging.simp.SimpMessageSendingOperations;
@@ -27,8 +27,8 @@ public class WsEventListener {
       String username = (String) headerAccessor.getSessionAttributes().get("username");
       if(username != null){
          //Asignar menesaje de tipo "LEAVE"
-         var message = new ChatMessage();
-         message.setType(ChatMessageType.LEAVE);
+         var message = new Message();
+         message.setType(MessageType.LEAVE);
          message.setSender(username);
 
          messageSendingOperations.convertAndSend("/topic/public", message);
