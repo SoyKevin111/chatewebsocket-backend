@@ -1,7 +1,9 @@
 # 🟢 Chat simple en Tiempo Real con WebSockets
 
-Este proyecto es un **chat grupal en tiempo real** construido con **Angular 18** en el frontend y **Spring Boot** en el backend.  
-Permite simular varios usuarios conectados simultáneamente, utilizando **WebSockets** para establecer una **conexión bidireccional** entre cliente y servidor, logrando comunicación instantánea.
+Este proyecto es un **chat grupal en tiempo real** construido con **Angular 18** en el frontend y **Spring Boot** en el
+backend.  
+Permite simular varios usuarios conectados simultáneamente, utilizando **WebSockets** para establecer una **conexión
+bidireccional** entre cliente y servidor, logrando comunicación instantánea.
 
 ---
 
@@ -29,5 +31,14 @@ Permite simular varios usuarios conectados simultáneamente, utilizando **WebSoc
 ![Chat principal](./src/main/resources/static/img/img1.png)
 
 ![Mensajes en tiempo real](./src/main/resources/static/img/img2.png)
+
+### Actualización
+
+![Mensajes en tiempo real](./src/main/resources/static/img/img3.png)
+
+Nota: se creo el backend y frontend para la carga del historial de mensajes en el chat del grupo, un simple inicio de
+sesión y registro.
+
+![Mensajes en tiempo real](./src/main/resources/static/img/img4.png)
 
 ---

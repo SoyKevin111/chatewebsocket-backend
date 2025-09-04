@@ -19,7 +19,9 @@ public class UserController {
 
    @PostMapping("/login")
    public ResponseEntity<?> login(@RequestParam String username) {
-      return userService.findByUsername(username).isPresent() ? ResponseEntity.ok("Successfully logged in") : ResponseEntity.notFound().build();
+      return userService.findByUsername(username)
+         .map(user -> ResponseEntity.ok().body(user))
+         .orElseGet(() -> ResponseEntity.notFound().build());
    }
 
    @PostMapping("/register")
