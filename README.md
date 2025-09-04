@@ -20,7 +20,7 @@ bidireccional** entre cliente y servidor, logrando comunicación instantánea.
 
 - Conexión simultánea de múltiples usuarios.
 - Envío y recepción de mensajes en tiempo real.
-- Mensajes almacenados temporalmente en memoria para simulaciones rápidas.
+- Mensajes persistidos en MongoDB.
 
 ---
 
